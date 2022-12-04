@@ -39,7 +39,7 @@ private val retrofit = Retrofit.Builder()
 
 interface AmphibianApiService {
     // TODO: Declare a suspended function to get the list of amphibians
-    // untuk mendapatkan daftar amfibi json
+    // untuk mendapatkan daftar amphibi json
     @GET("android-basics-kotlin-unit-4-pathway-2-project-api.json")
     // Implementasi antarmuka AmphibianApiService dengan fungsi suspend
     // untuk mendapatkan daftar amphibi

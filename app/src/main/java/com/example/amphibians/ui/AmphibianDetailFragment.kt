@@ -26,6 +26,7 @@ import com.example.amphibians.databinding.FragmentAmphibianDetailBinding
 /**
  * This Fragment shows the detailed information on a particular Amphibian
  */
+// Menampilkan detail dari amphibian dengan menggunakan fragment
 class AmphibianDetailFragment : Fragment() {
 
     private val viewModel: AmphibianViewModel by activityViewModels()
@@ -34,7 +35,7 @@ class AmphibianDetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        // DataBinding dari ViewModel yang akan ditampilkan pada detail view
         val binding = FragmentAmphibianDetailBinding.inflate(inflater)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel

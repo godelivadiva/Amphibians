@@ -20,6 +20,7 @@ package com.example.amphibians.network
  * amphibian, and a brief description of the amphibian.
  * The property names of this data class are used by Moshi to match the names of values in JSON.
  */
+// Data untuk mendeklarasikan Amphibian yang akan digunakan di Moshi saat convert JSON
 data class Amphibian(
     val name: String,
     val type: String,

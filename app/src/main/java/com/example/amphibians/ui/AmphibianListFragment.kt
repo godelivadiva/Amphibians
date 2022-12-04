@@ -25,11 +25,12 @@ import androidx.navigation.fragment.findNavController
 import com.example.amphibians.R
 import com.example.amphibians.databinding.FragmentAmphibianListBinding
 
-
+// Menampilkan List dari Amphibian yang didapatkan dengan menggunakan fragment
 class AmphibianListFragment : Fragment() {
 
     private val viewModel: AmphibianViewModel by activityViewModels()
 
+    // Fungsi untuk menampilkan view dengan Fragment pada saat program berjalan
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,7 +40,9 @@ class AmphibianListFragment : Fragment() {
         viewModel.getAmphibianList()
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
+        // menampilkan list dari amphibian dengan recyclerview
         binding.recyclerView.adapter = AmphibianListAdapter(AmphibianListener { amphibian ->
+            // mengarahkan ke view detail ketika salah satu amphibian di klik
             viewModel.onAmphibianClicked(amphibian)
             findNavController()
                 .navigate(R.id.action_amphibianListFragment_to_amphibianDetailFragment)

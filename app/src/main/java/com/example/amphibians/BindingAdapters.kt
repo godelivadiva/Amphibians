@@ -26,6 +26,7 @@ import com.example.amphibians.ui.AmphibianListAdapter
 /**
  * Updates the data shown in the [RecyclerView]
  */
+// Menampilkan list dari AmphibianListAdapter pada recyclerview
 @BindingAdapter("listData")
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<Amphibian>?) {
     val adapter = recyclerView.adapter as AmphibianListAdapter
@@ -38,6 +39,7 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<Amphibian>?) {
  * displays a broken image to reflect the connection error.  When the request is finished, it
  * hides the image view.
  */
+// Menampilkan image sesuai dengan status yang dikirimkan dari AmphibianApiStatus
 @BindingAdapter("apiStatus")
 fun bindStatus(statusImageView: ImageView, status: AmphibianApiStatus?) {
     when(status) {

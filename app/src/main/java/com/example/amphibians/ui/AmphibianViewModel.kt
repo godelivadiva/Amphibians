@@ -23,18 +23,18 @@ import com.example.amphibians.network.Amphibian
 import com.example.amphibians.network.AmphibianApi
 import kotlinx.coroutines.launch
 
-// Kemungkinan value untuk menampilkan status permintaan ke user
+// value untuk menampilkan status permintaan ke user ada Loading, Error, Done
 enum class AmphibianApiStatus {LOADING, ERROR, DONE}
 
 class AmphibianViewModel : ViewModel() {
 
     // TODO: Create properties to represent MutableLiveData and LiveData for the API status
-    // Menyimpan enum AmphibianApiStatus dengan MutableLiveData
+    // Menyimpan enum AmphibianApiStatus dengan MutableLiveData dan LiveData
     private val _status = MutableLiveData<AmphibianApiStatus>()
     val status: LiveData<AmphibianApiStatus> = _status
 
     // TODO: Create properties to represent MutableLiveData and LiveData for a list of amphibian objects
-    // Menampilkan daftar amphibi untuk List
+    // Menampilkan daftar amphibi untuk List dengan menggunakan MutableLiveData dan LiveData
     private val _amphibians = MutableLiveData<List<Amphibian>>()
     val amphibians: LiveData<List<Amphibian>> = _amphibians
 
@@ -45,6 +45,7 @@ class AmphibianViewModel : ViewModel() {
 
     // TODO: Create a function that gets a list of amphibians from the api service and sets the
     //  status via a Coroutine
+    // Untuk mendapatkan list Amphibian dari API
     fun getAmphibianList() {
         _status.value = AmphibianApiStatus.LOADING
         // Menggunakan try-catch untuk menangani error (data akan kosong alih-alih force close)
